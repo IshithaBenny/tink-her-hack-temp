@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <rect width="100%" height="100%" rx="12" fill="#fff7ed" stroke="#fed7aa"/>
+  <g transform="translate(20,20)">
+    <rect x="0" y="0" width="120" height="80" rx="8" fill="#fff" stroke="#fdba74"/>
+    <text x="0" y="110" font-size="14" fill="#92400e">Sample Match Image</text>
+  </g>
+</svg>
