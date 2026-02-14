@@ -2,27 +2,32 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# CampusFind - Smart Campus Lost & Found System 🎯
 
 ## Basic Details
 
 ### Team Name: DuoLogic
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Ishitha Benny - Christ College of Engineering
+- Janet Jiju - Christ College of Engineering
 
 ### Hosted Project Link
-[mention your project hosted link here]
+https://campusfindcce.vercel.app/
 
 ### Project Description
-[2-3 lines about what your project does]
+CampusFind is a web-based application designed to streamline the process of recovering lost items within a college campus. Unlike traditional lost-and-found systems that rely on physical notice boards or cluttered social media groups, CampusFind provides a centralized, searchable, and secure platform. The system enables quick item recovery with minimal human intervention and includes built-in security verification to prevent false claims.
 
-### The Problem statement
-[What problem are you solving?]
+### Problem Statement
+College campuses are high-traffic environments where students frequently lose essentials like ID cards, electronics, and keys. Current solutions (WhatsApp/Telegram groups) suffer from:
+- **Information Overload**: Posts get buried quickly, making items impossible to find
+- **Lack of Privacy**: Personal contact info and item details are shared publicly
+- **Inefficiency**: No automated way to match a "found" report with a "lost" inquiry
+- **No verification**: Anyone can claim lost items
 
 ### The Solution
-[How are you solving it?]
+CampusFind provides a secure, intelligent platform that automates lost & found matching while protecting user privacy through security verification questions and encrypted data storage.
+
 
 ---
 
@@ -30,26 +35,42 @@
 
 ### Technologies/Components Used
 
-**For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+**Frontend:**
+- **Language**: TypeScript, JavaScript
+- **Framework**: Next.js 16.1.6
+- **UI Library**: React 19.2.3
+- **Styling**: Tailwind CSS 4, PostCSS
+- **Fonts**: Geist (Google Fonts)
 
-**For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
+**Backend:**
+- **Runtime**: Node.js
+- **API**: Next.js API Routes
+- **Authentication**: bcryptjs (password hashing)
+
+**Database & Services:**
+- **Database**: Supabase (PostgreSQL)
+- **ORM**: Supabase JavaScript Client
+- **AI Integration**: Google Generative AI (for chatbot assistance)
+
+**Development Tools:**
+- **Version Control**: Git
+- **Code Editor**: VS Code
+- **Linting**: ESLint
+- **Package Manager**: npm/yarn
 
 ---
 
 ## Features
 
-List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- **Report Lost Items**: Upload photos with security questions to verify ownership
+- **Report Found Items**: Document found items with location details for easy recovery
+- **Smart Search**: Browse and search through categorized lost and found reports
+- **AI-Powered Chatbot**: Get intelligent assistance navigating the platform
+- **Security Verification**: Ownership verification through custom security questions
+- **User Authentication**: Secure signup and login system with encrypted passwords
+- **Category Selection**: Organize items by category for better searchability
+- **Responsive Design**: Fully mobile-responsive interface for on-campus access
+- **Results Matching**: Find matching lost/found items efficiently
 
 ---
 
@@ -57,196 +78,205 @@ List the key features of your project:
 
 ### For Software:
 
+#### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn package manager
+- Supabase account with configured PostgreSQL database
+- Google Generative AI API key
+
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+# Clone the repository
+git clone <repository-url>
+cd tink-her-hack-temp
+
+# Install dependencies
+npm install
+```
+
+#### Environment Setup
+Create a `.env.local` file in the root directory with the following variables:
+```
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+GOOGLE_API_KEY=your_google_generative_ai_key
 ```
 
 #### Run
 ```bash
-[Run commands - e.g., npm start, python app.py]
+# Development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run linter
+npm run lint
 ```
 
-### For Hardware:
-
-#### Components Required
-[List all components needed with specifications]
-
-#### Circuit Setup
-[Explain how to set up the circuit]
+The application will be available at `http://localhost:3000`
 
 ---
 
-## Project Documentation
+## Project Structure
 
-### For Software:
+```
+app/
+├── api/                          # API routes
+│   ├── admin/init-schema/       # Database schema initialization
+│   ├── auth/                     # Authentication endpoints
+│   │   ├── register/
+│   │   ├── simple-login/
+│   │   └── simple-register/
+│   ├── chat/                     # AI chatbot endpoints
+│   ├── debug/                    # Debug utilities
+│   └── diagnostic/               # Schema status diagnostics
+├── category-selection/           # Category selection page
+├── components/                   # Reusable components
+│   └── Chatbot.tsx              # AI-powered chatbot component
+├── login/                        # Login page
+├── report-found/                # Report found items page
+├── report-lost/                 # Report lost items page
+├── results/                      # Search results page
+├── signup/                       # User signup page
+├── layout.tsx                    # Root layout with chatbot
+├── page.tsx                      # Homepage
+└── globals.css                   # Global styles
 
-#### Screenshots (Add at least 3)
-
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-#### Diagrams
-
-**System Architecture:**
-
-![Architecture Diagram](docs/architecture.png)
-*Explain your system architecture - components, data flow, tech stack interaction*
-
-**Application Workflow:**
-
-![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
-
----
-
-### For Hardware:
-
-#### Schematic & Circuit
-
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-#### Build Photos
-
-![Team](Add photo of your team here)
-
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
----
-
-## Additional Documentation
-
-### For Web Projects with Backend:
-
-#### API Documentation
-
-**Base URL:** `https://api.yourproject.com`
-
-##### Endpoints
-
-**GET /api/endpoint**
-- **Description:** [What it does]
-- **Parameters:**
-  - `param1` (string): [Description]
-  - `param2` (integer): [Description]
-- **Response:**
-```json
-{
-  "status": "success",
-  "data": {}
-}
+lib/
+├── db.ts                         # Database utilities
+├── schema-init.ts                # Schema initialization logic
+├── schema.sql                    # Database schema definition
+└── supabase.ts                   # Supabase client configuration
 ```
 
-**POST /api/endpoint**
-- **Description:** [What it does]
+## Database Schema
+
+The application uses Supabase PostgreSQL. See [SUPABASE_SCHEMA.sql](SUPABASE_SCHEMA.sql) for the complete schema definition.
+
+Key tables:
+- **users**: User accounts with authentication
+- **lost_items**: Reports of lost items with images and security verification
+- **found_items**: Reports of found items with storage locations
+- **categories**: Item categorization
+
+For schema setup instructions, see [SCHEMA_AUTO_INIT.md](SCHEMA_AUTO_INIT.md)
+
+---
+
+## API Documentation
+
+### Authentication Endpoints
+
+#### POST `/api/auth/register`
+Register a new user account
 - **Request Body:**
 ```json
 {
-  "field1": "value1",
-  "field2": "value2"
+  "email": "student@campus.com",
+  "password": "securepassword",
+  "name": "Student Name"
 }
 ```
-- **Response:**
+- **Response:** `{ "user_id": "...", "token": "..." }`
+
+#### POST `/api/auth/simple-login`
+Login with email and password
+- **Request Body:**
 ```json
 {
-  "status": "success",
-  "message": "Operation completed"
+  "email": "student@campus.com",
+  "password": "securepassword"
 }
 ```
+- **Response:** `{ "session": "...", "user": {...} }`
 
-[Add more endpoints as needed...]
+### Item Management Endpoints
 
----
-
-### For Mobile Apps:
-
-#### App Flow Diagram
-
-![App Flow](docs/app-flow.png)
-*Explain the user flow through your application*
-
-#### Installation Guide
-
-**For Android (APK):**
-1. Download the APK from [Release Link]
-2. Enable "Install from Unknown Sources" in your device settings:
-   - Go to Settings > Security
-   - Enable "Unknown Sources"
-3. Open the downloaded APK file
-4. Follow the installation prompts
-5. Open the app and enjoy!
-
-**For iOS (IPA) - TestFlight:**
-1. Download TestFlight from the App Store
-2. Open this TestFlight link: [Your TestFlight Link]
-3. Click "Install" or "Accept"
-4. Wait for the app to install
-5. Open the app from your home screen
-
-**Building from Source:**
-```bash
-# For Android
-flutter build apk
-# or
-./gradlew assembleDebug
-
-# For iOS
-flutter build ios
-# or
-xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug
+#### POST `/api/chat`
+Get AI-powered assistance via chatbot
+- **Request Body:**
+```json
+{
+  "message": "I lost my ID card"
+}
 ```
+- **Response:** `{ "reply": "..." }`
+
+#### GET `/api/diagnostic/schema-status`
+Check database schema status
+- **Response:** `{ "status": "ready" | "initializing" | "error", "message": "..." }`
 
 ---
 
-### For Hardware Projects:
+## Additional Resources
 
-#### Bill of Materials (BOM)
+- [Supabase Setup Guide](SUPABASE_SETUP.md) - Database configuration
+- [Schema Initialization Guide](SCHEMA_AUTO_INIT.md) - Setting up database tables
+- [Integration Guide](INTEGRATION_GUIDE.md) - Integrating with external services
+- [Simple Auth Setup](SIMPLE_AUTH_SETUP.md) - Basic authentication setup
+- [Email Rate Limit Fix](EMAIL_RATE_LIMIT_FIX.md) - Handling email service limits
+- [RLS Fix Guide](RLS_FIX.md) - Row-level security configuration
 
-| Component | Quantity | Specifications | Price | Link/Source |
-|-----------|----------|----------------|-------|-------------|
-| Arduino Uno | 1 | ATmega328P, 16MHz | ₹450 | [Link] |
-| LED | 5 | Red, 5mm, 20mA | ₹5 each | [Link] |
-| Resistor | 5 | 220Ω, 1/4W | ₹1 each | [Link] |
-| Breadboard | 1 | 830 points | ₹100 | [Link] |
-| Jumper Wires | 20 | Male-to-Male | ₹50 | [Link] |
-| [Add more...] | | | | |
+---
 
-**Total Estimated Cost:** ₹[Amount]
+## User Workflow
 
-#### Assembly Instructions
+1. **Home Page**: User lands on CampusFind homepage
+2. **Authentication**: Sign up or login to create an account
+3. **Report Lost Item**: 
+   - Upload item photo
+   - Create security question
+   - Select category
+   - Submit report
+4. **Report Found Item**: 
+   - Upload item photo
+   - Provide location details
+   - Submit to help others
+5. **Search Results**: Browse matching items and contact finders/losers
+6. **AI Chatbot Support**: Get help navigating the platform 24/7
 
-**Step 1: Prepare Components**
-1. Gather all components listed in the BOM
-2. Check component specifications
-3. Prepare your workspace
-![Step 1](images/assembly-step1.jpg)
-*Caption: All components laid out*
+---
 
-**Step 2: Build the Power Supply**
-1. Connect the power rails on the breadboard
-2. Connect Arduino 5V to breadboard positive rail
-3. Connect Arduino GND to breadboard negative rail
-![Step 2](images/assembly-step2.jpg)
-*Caption: Power connections completed*
+## Deployment
 
-**Step 3: Add Components**
+The application is deployed on [Vercel](https://vercel.com/) with automatic deployments from the main branch.
+
+**Live URL:** https://campusfindcce.vercel.app/
+
+### Environment Variables Required for Deployment:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` 
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `GOOGLE_API_KEY`
+
+---
+
+## Future Enhancements
+
+- Advanced image recognition using OpenAI Vision API
+- GPS-based item location tracking
+- Mobile app (React Native)
+- Push notifications for item matches
+- Integration with campus facilities
+- Item value estimation
+- Reward system for finders
+
+---
+
+## License
+
+[Add your license information here]
+
+---
+
+## Support & Contact
+
+For support or questions, contact the development team at [your-email@campus.com]
 1. Place LEDs on breadboard
 2. Connect resistors in series with LEDs
 3. Connect LED cathodes to GND
@@ -254,13 +284,7 @@ xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug
 ![Step 3](images/assembly-step3.jpg)
 *Caption: LED circuit assembled*
 
-**Step 4: [Continue for all steps...]**
-
-**Final Assembly:**
-![Final Build](images/final-build.jpg)
-*Caption: Completed project ready for testing*
-
----
+**Step 4: [Continue for all steps...]**---
 
 ### For Scripts/CLI Tools:
 
@@ -299,122 +323,31 @@ python script.py -o output.txt input.txt
 python script.py -c config.json --verbose input.txt
 ```
 
-#### Demo Output
-
-**Example 1: Basic Processing**
-
-**Input:**
-```
-This is a sample input file
-with multiple lines of text
-for demonstration purposes
-```
-
-**Command:**
-```bash
-python script.py sample.txt
-```
-
-**Output:**
-```
-Processing: sample.txt
-Lines processed: 3
-Characters counted: 86
-Status: Success
-Output saved to: output.txt
-```
-
-**Example 2: Advanced Usage**
-
-**Input:**
-```json
-{
-  "name": "test",
-  "value": 123
-}
-```
-
-**Command:**
-```bash
-python script.py -v --format json data.json
-```
-
-**Output:**
-```
-[VERBOSE] Loading configuration...
-[VERBOSE] Parsing JSON input...
-[VERBOSE] Processing data...
-{
-  "status": "success",
-  "processed": true,
-  "result": {
-    "name": "test",
-    "value": 123,
-    "timestamp": "2024-02-07T10:30:00"
-  }
-}
-[VERBOSE] Operation completed in 0.23s
-```
-
----
-
-## Project Demo
-
-### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
-
-*Explain what the video demonstrates - key features, user flow, technical highlights*
-
-### Additional Demos
-[Add any extra demo materials/links - Live site, APK download, online demo, etc.]
-
----
-
-## AI Tools Used (Optional - For Transparency Bonus)
-
-If you used AI tools during development, document them here for transparency:
-
-**Tool Used:** [e.g., GitHub Copilot, v0.dev, Cursor, ChatGPT, Claude]
-
-**Purpose:** [What you used it for]
-- Example: "Generated boilerplate React components"
-- Example: "Debugging assistance for async functions"
-- Example: "Code review and optimization suggestions"
-
-**Key Prompts Used:**
-- "Create a REST API endpoint for user authentication"
-- "Debug this async function that's causing race conditions"
-- "Optimize this database query for better performance"
-
-**Percentage of AI-generated code:** [Approximately X%]
-
-**Human Contributions:**
-- Architecture design and planning
-- Custom business logic implementation
-- Integration and testing
-- UI/UX design decisions
-
-*Note: Proper documentation of AI usage demonstrates transparency and earns bonus points in evaluation!*
-
 ---
 
 ## Team Contributions
 
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
+- **Ishitha Benny**: Frontend development, UI/UX design, React components
+- **Janet Jiju**: Backend development, Supabase integration, API implementation
+
+---
+
+## AI Tools Used
+
+**Tools Used:** GitHub Copilot, ChatGPT, v0.dev
+
+**Purposes:**
+- Component boilerplate generation
+- API endpoint implementation assistance
+- Database schema design suggestions
+- Debugging and optimization recommendations
 
 ---
 
 ## License
 
-This project is licensed under the [LICENSE_NAME] License - see the [LICENSE](LICENSE) file for details.
-
-**Common License Options:**
-- MIT License (Permissive, widely used)
-- Apache 2.0 (Permissive with patent grant)
-- GPL v3 (Copyleft, requires derivative works to be open source)
+This project is open source and available under the MIT License - see the LICENSE file for details.
 
 ---
 
-Made with ❤️ at TinkerHub
+Made with ❤️ by **Team DuoLogic** at TinkerHub

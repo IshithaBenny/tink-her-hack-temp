@@ -85,7 +85,7 @@ export default function CategorySelection() {
         <div
             className="min-h-screen flex items-center justify-center p-4"
             style={{
-                backgroundImage: 'url(/background2.jpg)',
+                backgroundImage: 'url(/credentials.jpg)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundAttachment: 'fixed'
